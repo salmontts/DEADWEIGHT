@@ -16,7 +16,7 @@ Program automatycznie wykonuje:
 ## 🔧 Sekcja dla Zaawansowanych
 
 ### 💻 Tryb konsolowy (CMD/PowerShell)
-```cmd
+``'`cmd
 # Pełne czyszczenie systemu (wymaga admina)
 deadweight.exe --purge
 
