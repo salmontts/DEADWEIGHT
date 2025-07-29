@@ -16,36 +16,36 @@ Program automatycznie wykonuje:
 ## 🔧 Sekcja dla Zaawansowanych
 
 ### 💻 Tryb konsolowy (CMD/PowerShell)
-``'`cmd
-## Pełne czyszczenie systemu (wymaga admina)
-deadweight.exe --purge
-
-## Skanowanie folderu (domyślnie 30+ dni nieużywane)
-deadweight.exe --scan "C:\Program Files" [DAYS]
-
-## Monitorowanie procesów w czasie rzeczywistym
-deadweight.exe --live 60
-
-## Szczegółowa analiza procesu
-deadweight.exe --lupa chrome.exe
-
-## Generowanie pełnego raportu
-deadweight.exe --report > raport.txt
-
+```cmd:
+    # Pełne czyszczenie systemu (wymaga admina)
+    deadweight.exe --purge
+    
+    # Skanowanie folderu (domyślnie 30+ dni nieużywane)
+    deadweight.exe --scan "C:\Program Files" [DAYS]
+    
+    # Monitorowanie procesów w czasie rzeczywistym
+    deadweight.exe --live 60
+    
+    # Szczegółowa analiza procesu
+    deadweight.exe --lupa chrome.exe
+    
+    # Generowanie pełnego raportu
+    deadweight.exe --report > raport.txt
+```
 # 🛠️ Zaawansowane funkcje
 cmd
 
-## Agresywne czyszczenie (uwaga!):
-deadweight.exe --purge --force
-
-## Usuwanie konkretnych aplikacji:
-deadweight.exe --uninstall "Adobe Flash"
-
-## Czyszczenie rejestru:
-deadweight.exe --regclean
-
-## Usuwanie nieużywanych sterowników:
-deadweight.exe --drvclean
+    # Agresywne czyszczenie (uwaga!):
+    deadweight.exe --purge --force
+    
+    # Usuwanie konkretnych aplikacji:
+    deadweight.exe --uninstall "Adobe Flash"
+    
+    # Czyszczenie rejestru:
+    deadweight.exe --regclean
+    
+    # Usuwanie nieużywanych sterowników:
+    deadweight.exe --drvclean
 
 # 🔍 Techniczne szczegóły implementacji
 
@@ -64,14 +64,14 @@ Program wykorzystuje:
 # 📝 Przykładowe zastosowania
 powershell
 
-## Zaplanowane czyszczenie (Task Scheduler)
-SCHTASKS /Create /SC WEEKLY /TN "Deadweight Clean" /TR "deadweight.exe --purge" /ST 23:00
-
-## Integracja z skryptami PS:
-Invoke-DeadweightClean -Mode Deep -LogPath "C:\logs\clean.log"
-
-## Własne filtry czyszczenia:
-deadweight.exe --custom-filter "*.tmp,*.log,~*.*"
+    # Zaplanowane czyszczenie (Task Scheduler)
+    SCHTASKS /Create /SC WEEKLY /TN "Deadweight Clean" /TR "deadweight.exe --purge" /ST 23:00
+    
+    # Integracja z skryptami PS:
+    Invoke-DeadweightClean -Mode Deep -LogPath "C:\logs\clean.log"
+    
+    # Własne filtry czyszczenia:
+    deadweight.exe --custom-filter "*.tmp,*.log,~*.*"
 
 # ⚠️ Bezpieczeństwo i logi
 
