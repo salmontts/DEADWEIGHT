@@ -1,89 +1,94 @@
 # DEADWEIGHT - Windows Cleaner
 
-![DEADWEIGHT GUI](screenshot.png)
+Basic Usage (For Everyone)
 
-## Podstawowe użycie (dla wszystkich)
-1. 🚀 **Pobierz** najnowszą wersję `deadweight.exe`
-2. 🖱️ **Uruchom** (kliknij dwukrotnie)
-3. 🔘 Kliknij **CLEAN**
-4. ☕ Poczekaj na zakończenie (zwykle 1-3 minuty)
+    🚀 Download the latest deadweight.exe
 
-Program automatycznie wykonuje:
-- ✔️ Czyszczenie plików tymczasowych (%TEMP%, Prefetch)
-- ✔️ Usuwanie zbędnych wpisów autostartu
-- ✔️ Logowanie wszystkich operacji do `deadweight.log`
+    🖱️ Run (double-click)
 
-## 🔧 Sekcja dla Zaawansowanych
+    🔘 Click CLEAN
 
-### 💻 Tryb konsolowy (CMD/PowerShell)
-```cmd:
-    # Pełne czyszczenie systemu (wymaga admina)
-    deadweight.exe --purge
-    
-    # Skanowanie folderu (domyślnie 30+ dni nieużywane)
-    deadweight.exe --scan "C:\Program Files" [DAYS]
-    
-    # Monitorowanie procesów w czasie rzeczywistym
-    deadweight.exe --live 60
-    
-    # Szczegółowa analiza procesu
-    deadweight.exe --lupa chrome.exe
-    
-    # Generowanie pełnego raportu
-    deadweight.exe --report > raport.txt
-```
-# 🛠️ Zaawansowane funkcje
+    ☕ Wait for completion (typically 1-3 minutes)
+
+## The program automatically performs:
+
+    ✔️ Temporary files cleanup (%TEMP%, Prefetch)
+
+    ✔️ Removal of unnecessary startup entries
+
+    ✔️ Logging all operations to deadweight.log
+
+## 🔧 Advanced Section
+💻 Command Line Mode (CMD/PowerShell)
 cmd
 
-    # Agresywne czyszczenie (uwaga!):
+    # Full system cleanup (requires admin)
+    deadweight.exe --purge
+    
+    # Folder scan (default: 30+ days unused)
+    deadweight.exe --scan "C:\Program Files" [DAYS]
+    
+    # Real-time process monitoring
+    deadweight.exe --live 60
+    
+    # Detailed process analysis
+    deadweight.exe --lupa chrome.exe
+    
+    # Generate full report
+    deadweight.exe --report > report.txt
+
+🛠️ Advanced Features
+cmd
+
+    # Aggressive cleaning (warning!):
     deadweight.exe --purge --force
     
-    # Usuwanie konkretnych aplikacji:
+    # Remove specific applications:
     deadweight.exe --uninstall "Adobe Flash"
     
-    # Czyszczenie rejestru:
+    # Registry cleaning:
     deadweight.exe --regclean
     
-    # Usuwanie nieużywanych sterowników:
+    # Remove unused drivers:
     deadweight.exe --drvclean
 
-# 🔍 Techniczne szczegóły implementacji
+🔍 Technical Implementation Details
 
-Program wykorzystuje:
+The program uses:
 
-    Niskopoziomowe API Windows (Win32/Native API)
+    Low-level Windows API (Win32/Native API)
 
-    Rekurencyjne skanowanie systemu plików NTFS
+    Recursive NTFS filesystem scanning
 
-    Bezpośredni dostęp do rejestru
+    Direct registry access
 
-    Analizę prefetch i event logs
+    Prefetch and event logs analysis
 
-    WMI do zarządzania procesami
+    WMI for process management
 
-# 📝 Przykładowe zastosowania
+📝 Example Use Cases
 powershell
 
-    # Zaplanowane czyszczenie (Task Scheduler)
+    # Scheduled cleaning (Task Scheduler)
     SCHTASKS /Create /SC WEEKLY /TN "Deadweight Clean" /TR "deadweight.exe --purge" /ST 23:00
     
-    # Integracja z skryptami PS:
+    # PowerShell script integration:
     Invoke-DeadweightClean -Mode Deep -LogPath "C:\logs\clean.log"
     
-    # Własne filtry czyszczenia:
+    # Custom cleaning filters:
     deadweight.exe --custom-filter "*.tmp,*.log,~*.*"
 
-# ⚠️ Bezpieczeństwo i logi
+⚠️ Security and Logs
 
-Program generuje szczegółowe logi:
+The program generates detailed logs:
 
-    deadweight.log - podstawowe operacje
+    deadweight.log - basic operations
 
-    deadweight_purge.log - pełny zapis czyszczenia
+    deadweight_purge.log - full cleaning record
 
-    deadweight_errors.log - błędy i ostrzeżenia
+    deadweight_errors.log - errors and warnings
 
-Zawsze sprawdzaj logi przed usunięciem ważnych danych!
+Always check logs before deleting important data!
 
-📌 Wersja: 1.3 (2025-07-29)
-📜 Licencja: MIT (pełne prawa do modyfikacji)
+📌 Version: 1.3 (2025-07-29)
+📜 License: MIT (full modification rights)
