@@ -17,37 +17,37 @@ Program automatycznie wykonuje:
 
 ### 💻 Tryb konsolowy (CMD/PowerShell)
 ``'`cmd
-# Pełne czyszczenie systemu (wymaga admina)
+## Pełne czyszczenie systemu (wymaga admina)
 deadweight.exe --purge
 
-# Skanowanie folderu (domyślnie 30+ dni nieużywane)
+## Skanowanie folderu (domyślnie 30+ dni nieużywane)
 deadweight.exe --scan "C:\Program Files" [DAYS]
 
-# Monitorowanie procesów w czasie rzeczywistym
+## Monitorowanie procesów w czasie rzeczywistym
 deadweight.exe --live 60
 
-# Szczegółowa analiza procesu
+## Szczegółowa analiza procesu
 deadweight.exe --lupa chrome.exe
 
-# Generowanie pełnego raportu
+## Generowanie pełnego raportu
 deadweight.exe --report > raport.txt
 
-🛠️ Zaawansowane funkcje
+# 🛠️ Zaawansowane funkcje
 cmd
 
-# Agresywne czyszczenie (uwaga!):
+## Agresywne czyszczenie (uwaga!):
 deadweight.exe --purge --force
 
-# Usuwanie konkretnych aplikacji:
+## Usuwanie konkretnych aplikacji:
 deadweight.exe --uninstall "Adobe Flash"
 
-# Czyszczenie rejestru:
+## Czyszczenie rejestru:
 deadweight.exe --regclean
 
-# Usuwanie nieużywanych sterowników:
+## Usuwanie nieużywanych sterowników:
 deadweight.exe --drvclean
 
-🔍 Techniczne szczegóły implementacji
+# 🔍 Techniczne szczegóły implementacji
 
 Program wykorzystuje:
 
@@ -61,19 +61,19 @@ Program wykorzystuje:
 
     WMI do zarządzania procesami
 
-📝 Przykładowe zastosowania
+# 📝 Przykładowe zastosowania
 powershell
 
-# Zaplanowane czyszczenie (Task Scheduler)
+## Zaplanowane czyszczenie (Task Scheduler)
 SCHTASKS /Create /SC WEEKLY /TN "Deadweight Clean" /TR "deadweight.exe --purge" /ST 23:00
 
-# Integracja z skryptami PS:
+## Integracja z skryptami PS:
 Invoke-DeadweightClean -Mode Deep -LogPath "C:\logs\clean.log"
 
-# Własne filtry czyszczenia:
+## Własne filtry czyszczenia:
 deadweight.exe --custom-filter "*.tmp,*.log,~*.*"
 
-⚠️ Bezpieczeństwo i logi
+# ⚠️ Bezpieczeństwo i logi
 
 Program generuje szczegółowe logi:
 
