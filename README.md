@@ -91,4 +91,5 @@ The program generates detailed logs:
 Always check logs before deleting important data!
 
 📌 Version: 1.3 (2025-07-29)
-📜 License: MIT (full modification rights)
+
+📜 License: MIT
