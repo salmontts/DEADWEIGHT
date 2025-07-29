@@ -2,21 +2,21 @@
 
 Basic Usage (For Everyone)
 
-    🚀 Download the latest deadweight.exe
+🚀 Download the latest deadweight.exe
 
-    🖱️ Run (double-click)
+🖱️ Run (double-click)
 
-    🔘 Click CLEAN
+🔘 Click CLEAN
 
-    ☕ Wait for completion (typically 1-3 minutes)
+ ☕ Wait for completion (typically 1-3 minutes)
 
 ## The program automatically performs:
 
-    ✔️ Temporary files cleanup (%TEMP%, Prefetch)
+✔️ Temporary files cleanup (%TEMP%, Prefetch)
 
-    ✔️ Removal of unnecessary startup entries
+✔️ Removal of unnecessary startup entries
 
-    ✔️ Logging all operations to deadweight.log
+✔️ Logging all operations to deadweight.log
 
 ## 🔧 Advanced Section
 💻 Command Line Mode (CMD/PowerShell)
