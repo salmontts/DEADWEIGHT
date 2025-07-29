@@ -1,38 +1,89 @@
 # DEADWEIGHT - Windows Cleaner
 
-Najprostszy sposób na czyszczenie systemu Windows - jedno okno, jeden przycisk.
+![DEADWEIGHT GUI](screenshot.png)
 
-## Jak używać
+## Podstawowe użycie (dla wszystkich)
+1. 🚀 **Pobierz** najnowszą wersję `deadweight.exe`
+2. 🖱️ **Uruchom** (kliknij dwukrotnie)
+3. 🔘 Kliknij **CLEAN**
+4. ☕ Poczekaj na zakończenie (zwykle 1-3 minuty)
 
-1. **Pobierz** plik `deadweight.exe`
-2. **Uruchom** (kliknij dwukrotnie)
-3. Kliknij przycisk **CLEAN**
-4. Poczekaj aż program zakończy pracę
+Program automatycznie wykonuje:
+- ✔️ Czyszczenie plików tymczasowych (%TEMP%, Prefetch)
+- ✔️ Usuwanie zbędnych wpisów autostartu
+- ✔️ Logowanie wszystkich operacji do `deadweight.log`
 
-To wszystko! Program automatycznie:
-- Usunie niepotrzebne pliki tymczasowe
-- Wyczyści prefetch
-- Usunie zbędne wpisy autostartu
-- Zaloguje wszystkie wykonane działania
+## 🔧 Sekcja dla Zaawansowanych
 
-## Zaawansowane opcje (dla ekspertów)
+### 💻 Tryb konsolowy (CMD/PowerShell)
+```cmd
+# Pełne czyszczenie systemu (wymaga admina)
+deadweight.exe --purge
 
-Jeśli potrzebujesz więcej kontroli, uruchom program z linii poleceń:
+# Skanowanie folderu (domyślnie 30+ dni nieużywane)
+deadweight.exe --scan "C:\Program Files" [DAYS]
 
-deadweight.exe --scan # Skanuj foldery
-deadweight.exe --report # Generuj raport
-deadweight.exe --purge # Agresywne czyszczenie
+# Monitorowanie procesów w czasie rzeczywistym
+deadweight.exe --live 60
 
+# Szczegółowa analiza procesu
+deadweight.exe --lupa chrome.exe
 
-## Wymagania
-- Windows 7/10/11 (32 lub 64-bit)
-- 10MB wolnego miejsca
-- Uprawnienia administratora (dla pełnego czyszczenia)
+# Generowanie pełnego raportu
+deadweight.exe --report > raport.txt
 
-## Bezpieczeństwo
-Program tworzy szczegółowy log wszystkich operacji w pliku `deadweight.log`. Nigdy nie usuwa plików systemowych Windows.
+🛠️ Zaawansowane funkcje
+cmd
 
----
+# Agresywne czyszczenie (uwaga!):
+deadweight.exe --purge --force
 
-📝 *DEADWEIGHT v1.3 - Minimalistyczny cleaner Windows*  
-🔗 *Licencja MIT - Wolne do użytku osobistego i komercyjnego*
+# Usuwanie konkretnych aplikacji:
+deadweight.exe --uninstall "Adobe Flash"
+
+# Czyszczenie rejestru:
+deadweight.exe --regclean
+
+# Usuwanie nieużywanych sterowników:
+deadweight.exe --drvclean
+
+🔍 Techniczne szczegóły implementacji
+
+Program wykorzystuje:
+
+    Niskopoziomowe API Windows (Win32/Native API)
+
+    Rekurencyjne skanowanie systemu plików NTFS
+
+    Bezpośredni dostęp do rejestru
+
+    Analizę prefetch i event logs
+
+    WMI do zarządzania procesami
+
+📝 Przykładowe zastosowania
+powershell
+
+# Zaplanowane czyszczenie (Task Scheduler)
+SCHTASKS /Create /SC WEEKLY /TN "Deadweight Clean" /TR "deadweight.exe --purge" /ST 23:00
+
+# Integracja z skryptami PS:
+Invoke-DeadweightClean -Mode Deep -LogPath "C:\logs\clean.log"
+
+# Własne filtry czyszczenia:
+deadweight.exe --custom-filter "*.tmp,*.log,~*.*"
+
+⚠️ Bezpieczeństwo i logi
+
+Program generuje szczegółowe logi:
+
+    deadweight.log - podstawowe operacje
+
+    deadweight_purge.log - pełny zapis czyszczenia
+
+    deadweight_errors.log - błędy i ostrzeżenia
+
+Zawsze sprawdzaj logi przed usunięciem ważnych danych!
+
+📌 Wersja: 2.1 (2023-11-20)
+📜 Licencja: MIT (pełne prawa do modyfikacji)
