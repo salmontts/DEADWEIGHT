@@ -85,5 +85,5 @@ Program generuje szczegółowe logi:
 
 Zawsze sprawdzaj logi przed usunięciem ważnych danych!
 
-📌 Wersja: 2.1 (2023-11-20)
+📌 Wersja: 1.3 (2025-07-29)
 📜 Licencja: MIT (pełne prawa do modyfikacji)
